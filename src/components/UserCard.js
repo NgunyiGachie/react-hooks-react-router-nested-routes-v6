@@ -1,15 +1,17 @@
 import { Link, useOutletContext } from "react-router-dom";
 
 function UserCard({user}) {
-  const users = useOutletContext();
-  console.log(users);  
-  
+    const users = useOutletContext();
+    console.log(users);
+
   return (
-      <article>
-          <h2>{user.name}</h2>
+    <article>
+        <h2>{user.name}</h2>
+        <p>
           <Link to={`/profile/${user.id}`}>View profile</Link>
-      </article>
-    );
-  };
-  
-  export default UserCard;
+        </p>
+    </article>
+  );
+};
+
+export default UserCard;

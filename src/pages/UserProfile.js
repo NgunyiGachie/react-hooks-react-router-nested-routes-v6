@@ -1,4 +1,4 @@
-import { useOutletContext, useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 
 function UserProfile() {
   const params = useParams();
@@ -6,11 +6,11 @@ function UserProfile() {
 
   const user = users.find(user => user.id === parseInt(params.id));
 
-  if(!user.name){
-    return <h1>Loading...</h1>;
-  };
+  if (!user){
+    return <h1>Loading...</h1>
+  }
 
-  return(  
+  return(
       <aside>
         <h1>{user.name}</h1>
       </aside>
